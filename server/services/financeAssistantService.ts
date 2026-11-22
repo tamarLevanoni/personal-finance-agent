@@ -9,7 +9,7 @@ const expenses = loadExpensesFromCSV('server/expenses_data/expenses_2024-2025.cs
 const agent = new FinanceAgent(expenses);
 
 const convertMDtoHTML = (text: string) => {
-  const converter = new showdown.Converter();
+  const converter = new showdown.Converter({ tables: true });
   const html = converter.makeHtml(text);
   return html;
 }
